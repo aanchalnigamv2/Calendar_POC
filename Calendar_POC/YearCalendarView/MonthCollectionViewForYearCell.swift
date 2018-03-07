@@ -86,6 +86,8 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
             cell?.labelDay?.font = UIFont.systemFont(ofSize: 10)
             if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
                 cell?.markAsCurrentDay()
+            }else {
+                
             }
         }
         return cell!
