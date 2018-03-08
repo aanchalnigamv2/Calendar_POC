@@ -24,6 +24,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Year" id="5kj-NH-1mS"/>
                         <barButtonItem key="rightBarButtonItem" title="Today" id="pAr-5q-xid">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="todayButtonTapped:" destination="BYZ-38-t0r" id="Gja-bh-i8z"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

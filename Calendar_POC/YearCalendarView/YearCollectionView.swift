@@ -66,12 +66,16 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         let isLandscape: Bool = UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
         let lines: Int = isLandscape ? 3 : 4
         let columns: Int = isLandscape ? 4 : 3
-        sizeOfCell = CGSize(width: CGFloat(((frame.size.width - CGFloat((columns - 1) * 30)) / CGFloat(columns))), height: CGFloat(((frame.size.height - CGFloat((lines - 1) * 30)) / CGFloat(lines))))
+        sizeOfCell = CGSize(width: CGFloat(((frame.size.width - CGFloat((columns - 1) * 20)) / CGFloat(columns))), height: CGFloat(((frame.size.height - CGFloat((lines - 1) * 25)) / CGFloat(lines))))
         return sizeOfCell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -93,6 +97,7 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
             scrollDirection = ScrollDirection.none
         }
     }
+
     
     // MARK: - UICollectionView Delegate
     func showMonthCalendar() {

@@ -50,5 +50,9 @@ class ViewController: UIViewController, YearCalendarViewProtocol {
     func showMonthCalendar() {
         updateLabelWithMonthAndYear()
     }
+    
+    @IBAction func todayButtonTapped(_ sender: UIBarButtonItem) {
+        DateManager.shared().setCurrentDate(_currentDate: Date.dateWithYear(year: Date.componentsOfCurrentDate().year!, month: Date.componentsOfCurrentDate().month!, day: Date.componentsOfCurrentDate().day!))
+    }
 }
 

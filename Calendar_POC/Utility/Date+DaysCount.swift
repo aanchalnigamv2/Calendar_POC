@@ -10,6 +10,7 @@ import Foundation
 
 let dictWeekNumberName = [1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday", 7: "Saturday"]
 let arrayWeekAbrev = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+let arrayWeekInitial = ["S", "M", "T", "W", "T", "F", "S"]
 let arrayMonthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 let arrayMonthNameAbrev = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
