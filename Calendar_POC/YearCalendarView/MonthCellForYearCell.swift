@@ -12,6 +12,7 @@ class MonthCellForYearCell: UICollectionViewCell {
     
     var imageViewCircle: UIImageView?
     var labelDay: UILabel?
+    var day: Date?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +34,17 @@ class MonthCellForYearCell: UICollectionViewCell {
         labelDay?.text = ""
         labelDay?.textColor = UIColor.black
         imageViewCircle?.image = nil
+    }
+    
+    func setDate() {
+        if day != nil {
+            var components: DateComponents? = Date.componentsOf(date: day!)
+            labelDay?.text = String(describing: (components?.day)!)
+            labelDay?.font = UIFont.systemFont(ofSize: 10)
+            if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
+                markAsCurrentDay()
+            }
+        }
     }
     
     func markAsCurrentDay() {

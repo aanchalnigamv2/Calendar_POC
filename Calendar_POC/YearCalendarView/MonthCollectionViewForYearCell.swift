@@ -17,7 +17,7 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
     var date: Date?
     var cellProtocol: MonthCollectionViewForYearCellProtocol?
     var sizeOfCells = CGSize.zero
-    var arrayDates = [Date]()
+    var arrayDates: [Date?] = []
     var dateFirstDayOfMonth: Date?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -28,7 +28,7 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
         dataSource = self
         delegate = self
         backgroundColor = UIColor.white
-
+        isScrollEnabled = false
         register(MonthCellForYearCell.self, forCellWithReuseIdentifier: "monthCell")
         register(HeaderMonthForYearCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCollection")
     }
@@ -50,8 +50,6 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        arrayDates = [Date]()
-        
         var compDateManeger: DateComponents? = Date.componentsOf(date: date!)
         
         dateFirstDayOfMonth = Date.dateWithYear(year: (compDateManeger?.year)!, month: (compDateManeger?.month)!, day: 1)
@@ -67,6 +65,8 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
             if (i >= 1 && i <= lastDayMonth) {
                 let date = Date.dateWithYear(year: (compDateManeger?.year)!, month: (compDateManeger?.month)!, day: i)
                 arrayDates.append(date)
+            }else {
+                arrayDates.append(nil)
             }
             i += 1
         }
@@ -78,16 +78,18 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath) as? MonthCellForYearCell
         cell?.initLayout()
-        let obj = arrayDates[indexPath.row] as Date
-        if obj != nil {
-            let dateCell = obj
-            var components: DateComponents? = Date.componentsOf(date: dateCell)
-            cell?.labelDay?.text = String(describing: (components?.day)!)
-            cell?.labelDay?.font = UIFont.systemFont(ofSize: 10)
-            if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
-                cell?.markAsCurrentDay()
-            }
-        }
+        cell?.day = arrayDates[indexPath.row]
+        cell?.setDate()
+//        let obj = arrayDates[indexPath.row]
+//        if obj != nil {
+//            let dateCell = obj
+//            var components: DateComponents? = Date.componentsOf(date: dateCell!)
+//            cell?.labelDay?.text = String(describing: (components?.day)!)
+//            cell?.labelDay?.font = UIFont.systemFont(ofSize: 10)
+//            if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
+//                cell?.markAsCurrentDay()
+//            }
+//        }
         return cell!
     }
     

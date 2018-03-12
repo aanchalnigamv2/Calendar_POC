@@ -44,7 +44,7 @@ class YearCalendarView: UIView, YearCollectionViewProtocol {
     
     // MARK: - FFDateManager Notification
     @objc func dateChanged(_ not: Notification) {
-        collectionViewYear?.setContentOffset(CGPoint(x: 0.0, y: (collectionViewYear?.frame.size.height)! - 40), animated: false)
+        collectionViewYear?.setContentOffset(CGPoint(x: 0.0, y: (collectionViewYear?.frame.size.height)!), animated: false)
         collectionViewYear?.reloadData()
     }
     
