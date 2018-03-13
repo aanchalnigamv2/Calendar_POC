@@ -30,8 +30,6 @@ class YearCell: UICollectionViewCell, MonthCollectionViewForYearCellProtocol {
         if collectionView == nil {
             collectionView = MonthCollectionViewForYearCell(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height), collectionViewLayout: UICollectionViewLayout())
             collectionView?.cellProtocol = self
-            collectionView?.date = date
-            collectionView?.reloadData()
             addSubview(collectionView!)
         }
     }

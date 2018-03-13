@@ -50,6 +50,10 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        if arrayDates.count > 0 {
+            arrayDates.removeAll()
+            
+        }
         var compDateManeger: DateComponents? = Date.componentsOf(date: date!)
         
         dateFirstDayOfMonth = Date.dateWithYear(year: (compDateManeger?.year)!, month: (compDateManeger?.month)!, day: 1)
@@ -71,15 +75,15 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
             i += 1
         }
         
-        sizeOfCells = CGSize(width: frame.size.width / 7, height: CGFloat(((frame.size.height - 50.0) / 6)))
+        sizeOfCells = CGSize(width: frame.size.width / 7, height: (frame.size.height - 50) / 7)
+        //(((frame.size.height - 50.0) / 6)))
         return arrayDates.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath) as? MonthCellForYearCell
         cell?.initLayout()
-        cell?.day = arrayDates[indexPath.row]
-        cell?.setDate()
+        cell?.setDay(aDay: arrayDates[indexPath.row])
 //        let obj = arrayDates[indexPath.row]
 //        if obj != nil {
 //            let dateCell = obj

@@ -36,7 +36,8 @@ class MonthCellForYearCell: UICollectionViewCell {
         imageViewCircle?.image = nil
     }
     
-    func setDate() {
+    func setDay(aDay: Date?) {
+        day = aDay
         if day != nil {
             var components: DateComponents? = Date.componentsOf(date: day!)
             labelDay?.text = String(describing: (components?.day)!)

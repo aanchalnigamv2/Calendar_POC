@@ -24,7 +24,7 @@ enum ScrollDirection : Int {
 class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, YearCellProtocol {
     
     var yearCollectionViewProtocol: YearCollectionViewProtocol?
-    var lastContentOffset: CGFloat?
+    var lastContentOffset: CGFloat = 0.0
     var sizeOfCell: CGSize?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -55,8 +55,8 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath) as? YearCell
-        cell?.date = Date.dateWithYear(year: (DateManager.shared().currentDate?.componentsOfDate().year)! + (indexPath.section-1), month: (indexPath.row + 1), day: 1)
         cell?.initLayout()
+        cell?.setDate(aDate: Date.dateWithYear(year: (DateManager.shared().currentDate?.componentsOfDate().year)! + (indexPath.section-1), month: (indexPath.row + 1), day: 1))
         return cell!
     }
     
@@ -69,10 +69,6 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         return sizeOfCell!
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
     }
@@ -83,14 +79,18 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     
     // MARK: - UIScrollView Delegate
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+            scrollView.contentOffset.y = frame.size.height
+        }
         lastContentOffset = scrollView.contentOffset.y
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let scrollDirection: ScrollDirection?
-        if lastContentOffset! > scrollView.contentOffset.y {
+        if lastContentOffset > scrollView.contentOffset.y {
             changeYear(false)
-        }else if lastContentOffset! < scrollView.contentOffset.y {
+        }else if lastContentOffset < scrollView.contentOffset.y {
             changeYear(true)
         }else {
             scrollDirection = ScrollDirection.none
