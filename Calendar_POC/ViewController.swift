@@ -18,7 +18,7 @@ class ViewController: UIViewController, YearCalendarViewProtocol {
         // Do any additional setup after loading the view, typically from a nib.
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.dateChanged(_:)), name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: nil)
-        
+        edgesForExtendedLayout = []
         addCalendars()
         updateLabelWithMonthAndYear()
     }

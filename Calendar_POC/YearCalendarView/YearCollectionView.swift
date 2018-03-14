@@ -65,7 +65,7 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         let isLandscape: Bool = UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
         let lines: Int = isLandscape ? 3 : 4
         let columns: Int = isLandscape ? 4 : 3
-        sizeOfCell = CGSize(width: CGFloat(((frame.size.width - CGFloat((columns - 1) * 20)) / CGFloat(columns))), height: CGFloat(((frame.size.height - CGFloat((lines - 1) * 25)) / CGFloat(lines))))
+        sizeOfCell = CGSize(width: CGFloat(((frame.size.width - CGFloat((columns - 1) * 20)) / CGFloat(columns))), height: CGFloat(((frame.size.height - CGFloat((lines - 1) * 13)) / CGFloat(lines))))
         return sizeOfCell!
     }
     

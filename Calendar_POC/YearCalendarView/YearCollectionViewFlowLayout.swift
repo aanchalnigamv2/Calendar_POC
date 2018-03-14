@@ -11,6 +11,6 @@ import UIKit
 class YearCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
     var yearCollectionViewContentSize: CGSize {
-        return CGSize(width: (collectionView?.frame.size.width)!, height: (collectionView?.frame.size.height)!)
+        return CGSize(width: (collectionView?.frame.size.width)!, height: 3*(collectionView?.frame.size.height)!)
     }
 }
