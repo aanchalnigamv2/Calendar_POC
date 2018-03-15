@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87B55B79205A8578004A9B35 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B78205A8578004A9B35 /* MonthViewController.swift */; };
+		87B55B7C205A8A1B004A9B35 /* MonthCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */; };
+		87B55B7E205A9C1F004A9B35 /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7D205A9C1F004A9B35 /* MonthCell.swift */; };
+		87B55B80205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */; };
 		87C85A3C204E702B006E6A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A3B204E702B006E6A92 /* AppDelegate.swift */; };
-		87C85A3E204E702B006E6A92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A3D204E702B006E6A92 /* ViewController.swift */; };
+		87C85A3E204E702B006E6A92 /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A3D204E702B006E6A92 /* YearViewController.swift */; };
 		87C85A41204E702B006E6A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C85A3F204E702B006E6A92 /* Main.storyboard */; };
 		87C85A43204E702B006E6A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C85A42204E702B006E6A92 /* Assets.xcassets */; };
 		87C85A46204E702B006E6A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C85A44204E702B006E6A92 /* LaunchScreen.storyboard */; };
@@ -25,9 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87B55B78205A8578004A9B35 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionView.swift; sourceTree = "<group>"; };
+		87B55B7D205A9C1F004A9B35 /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
+		87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		87C85A38204E702B006E6A92 /* Calendar_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C85A3B204E702B006E6A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87C85A3D204E702B006E6A92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87C85A3D204E702B006E6A92 /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
 		87C85A40204E702B006E6A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87C85A42204E702B006E6A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C85A45204E702B006E6A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +63,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87B55B7A205A8628004A9B35 /* MonthCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */,
+				87B55B7D205A9C1F004A9B35 /* MonthCell.swift */,
+				87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */,
+			);
+			path = MonthCalendarView;
+			sourceTree = "<group>";
+		};
 		87C85A2F204E702B006E6A92 = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +94,10 @@
 			children = (
 				87C85A5C204E74F7006E6A92 /* Utility */,
 				87C85A4D204E7474006E6A92 /* YearCalendarView */,
+				87B55B7A205A8628004A9B35 /* MonthCalendarView */,
 				87C85A3B204E702B006E6A92 /* AppDelegate.swift */,
-				87C85A3D204E702B006E6A92 /* ViewController.swift */,
+				87C85A3D204E702B006E6A92 /* YearViewController.swift */,
+				87B55B78205A8578004A9B35 /* MonthViewController.swift */,
 				87C85A3F204E702B006E6A92 /* Main.storyboard */,
 				87C85A42204E702B006E6A92 /* Assets.xcassets */,
 				87C85A44204E702B006E6A92 /* LaunchScreen.storyboard */,
@@ -184,16 +204,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C85A55204E7474006E6A92 /* HeaderMonthForYearCell.swift in Sources */,
-				87C85A3E204E702B006E6A92 /* ViewController.swift in Sources */,
+				87C85A3E204E702B006E6A92 /* YearViewController.swift in Sources */,
 				87C85A5E204E74F8006E6A92 /* Date+DaysCount.swift in Sources */,
 				87C85A57204E7474006E6A92 /* MonthCollectionViewForYearCell.swift in Sources */,
 				87C85A5A204E7474006E6A92 /* YearCollectionView.swift in Sources */,
+				87B55B79205A8578004A9B35 /* MonthViewController.swift in Sources */,
+				87B55B7E205A9C1F004A9B35 /* MonthCell.swift in Sources */,
 				87C85A5B204E7474006E6A92 /* YearCollectionViewFlowLayout.swift in Sources */,
 				87C85A3C204E702B006E6A92 /* AppDelegate.swift in Sources */,
 				87C85A60204EB72E006E6A92 /* DateManager.swift in Sources */,
+				87B55B7C205A8A1B004A9B35 /* MonthCollectionView.swift in Sources */,
 				87C85A59204E7474006E6A92 /* YearCell.swift in Sources */,
 				87C85A56204E7474006E6A92 /* MonthCellForYearCell.swift in Sources */,
 				87C85A58204E7474006E6A92 /* YearCalendarView.swift in Sources */,
+				87B55B80205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

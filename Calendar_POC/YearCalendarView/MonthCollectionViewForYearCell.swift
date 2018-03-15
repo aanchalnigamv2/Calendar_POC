@@ -37,15 +37,6 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UICollectionView Delegate
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let obj = arrayDates[indexPath.row]
-        if obj != nil && cellProtocol != nil && cellProtocol!.responds(to: Selector(("showMonthCalendar"))) {
-            DateManager.shared().currentDate = obj
-            cellProtocol?.showMonthCalendar()
-        }
-    }
-    
     // MARK: - UICollectionView DataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,16 +75,6 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath) as? MonthCellForYearCell
         cell?.initLayout()
         cell?.setDay(aDay: arrayDates[indexPath.row])
-//        let obj = arrayDates[indexPath.row]
-//        if obj != nil {
-//            let dateCell = obj
-//            var components: DateComponents? = Date.componentsOf(date: dateCell!)
-//            cell?.labelDay?.text = String(describing: (components?.day)!)
-//            cell?.labelDay?.font = UIFont.systemFont(ofSize: 10)
-//            if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
-//                cell?.markAsCurrentDay()
-//            }
-//        }
         return cell!
     }
     
@@ -106,6 +87,15 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
             reusableview = headerView
         }
         return reusableview!
+    }
+    
+    // MARK: - UICollectionView Delegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let obj = arrayDates[indexPath.row]
+        if obj != nil && cellProtocol != nil && cellProtocol!.responds(to: Selector(("showMonthCalendar"))) {
+            DateManager.shared().currentDate = obj
+            cellProtocol?.showMonthCalendar()
+        }
     }
 
     // MARK: - UICollectionView Delegate FlowLayout

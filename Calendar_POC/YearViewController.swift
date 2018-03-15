@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, YearCalendarViewProtocol {
+class YearViewController: UIViewController, YearCalendarViewProtocol {
     
     @IBOutlet weak var labelWithMonthAndYear: UIBarButtonItem!
     var viewCalendarYear: YearCalendarView?
@@ -17,7 +17,7 @@ class ViewController: UIViewController, YearCalendarViewProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.dateChanged(_:)), name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(YearViewController.dateChanged(_:)), name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: nil)
         edgesForExtendedLayout = []
         addCalendars()
         updateLabelWithMonthAndYear()
