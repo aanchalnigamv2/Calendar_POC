@@ -55,6 +55,7 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath) as? YearCell
+        cell?.yearCellProtocol = self
         cell?.initLayout()
         cell?.setDate(aDate: Date.dateWithYear(year: (DateManager.shared().currentDate?.componentsOfDate().year)! + (indexPath.section-1), month: (indexPath.row + 1), day: 1))
         return cell!
@@ -100,9 +101,11 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     
     // MARK: - UICollectionView Delegate
     func showMonthCalendar() {
-        if yearCollectionViewProtocol != nil && (yearCollectionViewProtocol?.responds(to: Selector(("showMonthCalendar"))))! {
+        if yearCollectionViewProtocol != nil  {
             yearCollectionViewProtocol?.showMonthCalendar()
         }
+        
+        //&& (yearCollectionViewProtocol?.responds(to: Selector(("showMonthCalendar"))))!
     }
     
     // MARK: - Other Methods

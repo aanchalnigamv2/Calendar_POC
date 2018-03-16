@@ -28,7 +28,7 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - FFDateManager Notification
+    // MARK: - DateManager Notification
     @objc func dateChanged(_ notification: Notification) {
         updateLabelWithMonthAndYear()
     }
@@ -48,11 +48,18 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
     }
     
     func showMonthCalendar() {
-        updateLabelWithMonthAndYear()
+        performSegue(withIdentifier: "YearToMonth", sender: self)
     }
     
     @IBAction func todayButtonTapped(_ sender: UIBarButtonItem) {
         DateManager.shared().setCurrentDate(_currentDate: Date.dateWithYear(year: Date.componentsOfCurrentDate().year!, month: Date.componentsOfCurrentDate().month!, day: Date.componentsOfCurrentDate().day!))
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "YearToMonth" {
+            _ = segue.destination as! MonthViewController
+        }
+    }
+
 }
 

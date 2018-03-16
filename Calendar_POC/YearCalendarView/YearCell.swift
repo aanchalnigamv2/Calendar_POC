@@ -42,8 +42,10 @@ class YearCell: UICollectionViewCell, MonthCollectionViewForYearCellProtocol {
 
     // MARK: - MonthCollectionViewForYearCell Protocol
     func showMonthCalendar() {
-        if yearCellProtocol != nil && (yearCellProtocol?.responds(to: Selector(("showMonthCalendar"))))! {
+        if yearCellProtocol != nil  {
             yearCellProtocol?.showMonthCalendar()
         }
     }
+    
+    //&& (yearCellProtocol?.responds(to: Selector(("showMonthCalendar"))))!
 }

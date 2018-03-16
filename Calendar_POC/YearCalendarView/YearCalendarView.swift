@@ -40,9 +40,10 @@ class YearCalendarView: UIView, YearCollectionViewProtocol {
     // MARK: - Invalidate Layout
     func invalidateLayout() {
         collectionViewYear?.collectionViewLayout.invalidateLayout()
+        collectionViewYear?.reloadData()
     }
     
-    // MARK: - FFDateManager Notification
+    // MARK: - DateManager Notification
     @objc func dateChanged(_ not: Notification) {
         collectionViewYear?.setContentOffset(CGPoint(x: 0.0, y: (collectionViewYear?.frame.size.height)!), animated: false)
         collectionViewYear?.reloadData()
@@ -50,9 +51,11 @@ class YearCalendarView: UIView, YearCollectionViewProtocol {
     
     // MARK: - YearCollectionView Protocol
     func showMonthCalendar() {
-        if yearCalendarViewProtocol != nil && (yearCalendarViewProtocol?.responds(to: Selector(("showMonthCalendar"))))! {
+        if yearCalendarViewProtocol != nil  {
             yearCalendarViewProtocol?.showMonthCalendar()
         }
+        
+        //&& (yearCalendarViewProtocol?.responds(to: Selector(("showMonthCalendar"))))!
     }
     
 }

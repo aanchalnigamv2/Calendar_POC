@@ -92,10 +92,11 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
     // MARK: - UICollectionView Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let obj = arrayDates[indexPath.row]
-        if obj != nil && cellProtocol != nil && cellProtocol!.responds(to: Selector(("showMonthCalendar"))) {
+        if obj != nil && cellProtocol != nil  {
             DateManager.shared().currentDate = obj
             cellProtocol?.showMonthCalendar()
         }
+        //&& cellProtocol!.responds(to: Selector(("showMonthCalendar")))
     }
 
     // MARK: - UICollectionView Delegate FlowLayout
