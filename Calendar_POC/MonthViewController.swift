@@ -11,7 +11,7 @@ import UIKit
 class MonthViewController: UIViewController, YearCalendarViewProtocol {
 
     var viewCalendarMonth: MonthCalendarView?
-    
+    var date: Date?
     override func viewDidLoad() {
         super.viewDidLoad()
 

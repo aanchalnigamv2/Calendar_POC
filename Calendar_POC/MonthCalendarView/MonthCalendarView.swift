@@ -21,7 +21,7 @@ class MonthCalendarView: UIView {
         let view = MonthHeaderView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: 32))        
         addSubview(view)
         
-        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 32, width: frame.size.width, height: frame.size.height - 32), collectionViewLayout: UICollectionViewLayout())
+        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 32, width: frame.size.width, height: frame.size.height), collectionViewLayout: UICollectionViewLayout())
 //        collectionViewMonth.protocol = self
         addSubview(collectionViewMonth!)
         autoresizingMask = [.flexibleHeight, .flexibleWidth]

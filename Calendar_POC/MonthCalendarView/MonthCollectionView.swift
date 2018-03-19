@@ -21,10 +21,10 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         // Initialization code
         dataSource = self
         delegate = self
-        backgroundColor = UIColor.lightGray
+        backgroundColor = UIColor.white
         register(MonthCell.self, forCellWithReuseIdentifier: "monthCell")
         isScrollEnabled = true
-        isPagingEnabled = true
+//        isPagingEnabled = true
         showsVerticalScrollIndicator = false
 //        array = [[Date](), [Date](), [Date]()]
         arraySizeOfCells = [NSValue(cgSize: CGSize.zero) as! CGSize, NSValue(cgSize: CGSize.zero) as! CGSize, NSValue(cgSize: CGSize.zero) as! CGSize]
@@ -73,7 +73,8 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
             i += 1
         }
         
-        let sizeOfCells = CGSize(width: (frame.size.width - 7 * 2) / 7, height: (frame.size.height - CGFloat(dateFirstDayOfMonth.numberOfWeekInMonthCount() - 1) * 2 - 2) / CGFloat(dateFirstDayOfMonth.numberOfWeekInMonthCount()))
+        let sizeOfCells = CGSize(width: bounds.size.width / 7, height: 40)
+        //CGSize(width: (frame.size.width - 7 * 2) / 7, height: (frame.size.height - CGFloat(dateFirstDayOfMonth.numberOfWeekInMonthCount() - 1) * 2 - 2) / CGFloat(dateFirstDayOfMonth.numberOfWeekInMonthCount()))
         
         arraySizeOfCells[section] = NSValue(cgSize: sizeOfCells) as! CGSize
 
@@ -93,26 +94,31 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         return cell!
     }
     
+    
     // MARK: - UICollectionView Delegate FlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return NSValue(cgSize: arraySizeOfCells[indexPath.section]) as! CGSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let headerViewSize = CGSize(width: frame.size.width, height: 2)
+        let headerViewSize = CGSize(width: frame.size.width, height: 34)
         return headerViewSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 0
     }
     
     // MARK: - UIScrollView Delegate
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = .never
+            scrollView.contentOffset.y = frame.size.height
+        }
         lastContentOffset = scrollView.contentOffset.y
     }
     

@@ -10,10 +10,13 @@ import UIKit
 
 class MonthHeaderView: UIView {
 
+    var titleLabel: UILabel?
+    var date: Date?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        var arrayColor: [UIColor?] = [UIColor.gray, UIColor.black, UIColor.black, UIColor.black, UIColor.black, UIColor.black, UIColor.gray]
+        var arrayColor: [UIColor?] = [UIColor.lightGray, UIColor.black, UIColor.black, UIColor.black, UIColor.black, UIColor.black, UIColor.lightGray]
         let width = CGFloat(((frame.size.width - 6 * 2) / 7.0))
         
         for i in 0..<arrayWeekAbrev.count {
@@ -23,7 +26,7 @@ class MonthHeaderView: UIView {
             if let aI = arrayColor[i] {
                 label.textColor = aI
             }
-            label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+            label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize - 5)
             label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleWidth]
             addSubview(label)
         }

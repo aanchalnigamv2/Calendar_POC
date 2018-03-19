@@ -12,7 +12,8 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
     
     @IBOutlet weak var labelWithMonthAndYear: UIBarButtonItem!
     var viewCalendarYear: YearCalendarView?
-
+    var dateString: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,8 +36,8 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
     
     func updateLabelWithMonthAndYear() {
         let comp: DateComponents? = Date.componentsOf(date: DateManager.shared().currentDate!)
-        let string: String = String(describing: (comp?.year)!)
-        labelWithMonthAndYear.title = string
+        dateString = String(describing: (comp?.year)!)
+        labelWithMonthAndYear.title = dateString
         labelWithMonthAndYear.tintColor = UIColor.red
     }
 
@@ -57,7 +58,12 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "YearToMonth" {
-            _ = segue.destination as! MonthViewController
+            let monthViewController = segue.destination as! MonthViewController
+//            monthViewController.date = date
+            let backItem = UIBarButtonItem()
+            backItem.title = dateString
+            navigationItem.backBarButtonItem = backItem
+            navigationItem.backBarButtonItem?.tintColor = UIColor.red
         }
     }
 

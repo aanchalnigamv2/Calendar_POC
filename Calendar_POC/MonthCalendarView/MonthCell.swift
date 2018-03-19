@@ -32,11 +32,13 @@ class MonthCell: UICollectionViewCell {
             labelDay = UILabel(frame: CGRect(x: ((imageViewCircle?.frame.size.width)! - 20.0) / 2.0, y: ((imageViewCircle?.frame.size.height)! - 20.0) / 2.0, width: 20.0, height: 20.0))
             labelDay?.autoresizingMask = [.flexibleLeftMargin, .flexibleBottomMargin]
             labelDay?.textAlignment = .center
+            labelDay?.font = UIFont.systemFont(ofSize: 13)
             imageViewCircle?.addSubview(labelDay!)
         }
         backgroundColor = UIColor.white
         labelDay?.text = ""
         labelDay?.textColor = UIColor.black
+        
         imageViewCircle?.image = nil
         for button: UIButton in arrayButtons {
             button.removeFromSuperview()
@@ -50,7 +52,7 @@ class MonthCell: UICollectionViewCell {
     
     func markAsWeekend() {
         labelDay?.textColor = UIColor.gray
-        backgroundColor = UIColor.lightGray
+//        backgroundColor = UIColor.lightGray
     }
     
     func setDay(aDay: Date?) {
@@ -58,7 +60,7 @@ class MonthCell: UICollectionViewCell {
         if day != nil {
             var components: DateComponents? = Date.componentsOf(date: day!)
             labelDay?.text = String(describing: (components?.day)!)
-            labelDay?.font = UIFont.systemFont(ofSize: 10)
+            labelDay?.font = UIFont.systemFont(ofSize: 13)
             if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
                 markAsCurrentDay()
             }
