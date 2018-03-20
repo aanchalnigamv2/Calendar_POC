@@ -12,7 +12,6 @@
 		87B55B7E205A9C1F004A9B35 /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7D205A9C1F004A9B35 /* MonthCell.swift */; };
 		87B55B80205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */; };
 		87B55B82205BE347004A9B35 /* MonthCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B81205BE347004A9B35 /* MonthCalendarView.swift */; };
-		87B55B84205BE363004A9B35 /* MonthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B83205BE363004A9B35 /* MonthHeaderView.swift */; };
 		87C85A3C204E702B006E6A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A3B204E702B006E6A92 /* AppDelegate.swift */; };
 		87C85A3E204E702B006E6A92 /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A3D204E702B006E6A92 /* YearViewController.swift */; };
 		87C85A41204E702B006E6A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C85A3F204E702B006E6A92 /* Main.storyboard */; };
@@ -28,6 +27,8 @@
 		87C85A5E204E74F8006E6A92 /* Date+DaysCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A5D204E74F7006E6A92 /* Date+DaysCount.swift */; };
 		87C85A60204EB72E006E6A92 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A5F204EB72E006E6A92 /* DateManager.swift */; };
 		87C85A64204FCB69006E6A92 /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 87C85A63204FCB69006E6A92 /* redCircle.png */; };
+		87D6CE6E20610F560011519F /* MonthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6CE6C20610F560011519F /* MonthHeaderView.swift */; };
+		87D6CE6F20610F560011519F /* MonthHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D6CE6D20610F560011519F /* MonthHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,6 @@
 		87B55B7D205A9C1F004A9B35 /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
 		87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		87B55B81205BE347004A9B35 /* MonthCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendarView.swift; sourceTree = "<group>"; };
-		87B55B83205BE363004A9B35 /* MonthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderView.swift; sourceTree = "<group>"; };
 		87C85A38204E702B006E6A92 /* Calendar_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C85A3B204E702B006E6A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C85A3D204E702B006E6A92 /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +54,8 @@
 		87C85A5D204E74F7006E6A92 /* Date+DaysCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+DaysCount.swift"; sourceTree = "<group>"; };
 		87C85A5F204EB72E006E6A92 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		87C85A63204FCB69006E6A92 /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
+		87D6CE6C20610F560011519F /* MonthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderView.swift; sourceTree = "<group>"; };
+		87D6CE6D20610F560011519F /* MonthHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +72,12 @@
 		87B55B7A205A8628004A9B35 /* MonthCalendarView */ = {
 			isa = PBXGroup;
 			children = (
-				87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */,
 				87B55B7D205A9C1F004A9B35 /* MonthCell.swift */,
+				87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */,
 				87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */,
 				87B55B81205BE347004A9B35 /* MonthCalendarView.swift */,
-				87B55B83205BE363004A9B35 /* MonthHeaderView.swift */,
+				87D6CE6C20610F560011519F /* MonthHeaderView.swift */,
+				87D6CE6D20610F560011519F /* MonthHeaderView.xib */,
 			);
 			path = MonthCalendarView;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				87C85A46204E702B006E6A92 /* LaunchScreen.storyboard in Resources */,
 				87C85A64204FCB69006E6A92 /* redCircle.png in Resources */,
+				87D6CE6F20610F560011519F /* MonthHeaderView.xib in Resources */,
 				87C85A43204E702B006E6A92 /* Assets.xcassets in Resources */,
 				87C85A41204E702B006E6A92 /* Main.storyboard in Resources */,
 			);
@@ -218,7 +222,7 @@
 				87B55B7E205A9C1F004A9B35 /* MonthCell.swift in Sources */,
 				87C85A5B204E7474006E6A92 /* YearCollectionViewFlowLayout.swift in Sources */,
 				87C85A3C204E702B006E6A92 /* AppDelegate.swift in Sources */,
-				87B55B84205BE363004A9B35 /* MonthHeaderView.swift in Sources */,
+				87D6CE6E20610F560011519F /* MonthHeaderView.swift in Sources */,
 				87C85A60204EB72E006E6A92 /* DateManager.swift in Sources */,
 				87B55B7C205A8A1B004A9B35 /* MonthCollectionView.swift in Sources */,
 				87C85A59204E7474006E6A92 /* YearCell.swift in Sources */,

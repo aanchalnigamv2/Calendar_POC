@@ -59,7 +59,7 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "YearToMonth" {
             let monthViewController = segue.destination as! MonthViewController
-//            monthViewController.date = date
+            monthViewController.date = DateManager.shared().currentDate
             let backItem = UIBarButtonItem()
             backItem.title = dateString
             navigationItem.backBarButtonItem = backItem

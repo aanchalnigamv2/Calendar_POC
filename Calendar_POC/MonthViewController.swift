@@ -12,6 +12,7 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
 
     var viewCalendarMonth: MonthCalendarView?
     var date: Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,16 +33,13 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
     }
     
     func updateLabelWithMonthAndYear() {
-        let comp: DateComponents? = Date.componentsOf(date: DateManager.shared().currentDate!)
+        let comp: DateComponents? = Date.componentsOf(date: date!)
         let string: String = String(describing: "\(arrayMonthName[(comp?.month)! - 1]) \((comp?.year)!)")
         print(string)
-        
-//        labelWithMonthAndYear.title = string
-//        labelWithMonthAndYear.tintColor = UIColor.red
     }
     
     func addCalendars() {
-        let frame = CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: view.frame.size.height)
+        let frame = CGRect(x: 0.0, y: 20.0, width: view.frame.size.width, height: view.frame.size.height)
         viewCalendarMonth = MonthCalendarView(frame: frame)
 //        viewCalendarMonth?.yearCalendarViewProtocol = self
         view.addSubview(viewCalendarMonth!)

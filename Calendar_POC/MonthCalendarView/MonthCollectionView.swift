@@ -14,6 +14,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     var arraySizeOfCells: [CGSize] = []
     var arrayWithFirstDay: [Date?] = []
     var lastContentOffset: CGFloat = 0.0
+    var weekdayOfFirstDay: Int = 0
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
@@ -23,6 +24,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         delegate = self
         backgroundColor = UIColor.white
         register(MonthCell.self, forCellWithReuseIdentifier: "monthCell")
+        register(MonthHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
         isScrollEnabled = true
 //        isPagingEnabled = true
         showsVerticalScrollIndicator = false
@@ -59,6 +61,8 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         
         print("Weekday:\(Int(componentsFirstDayOfMonth.weekday!))")
         
+        weekdayOfFirstDay = Int(componentsFirstDayOfMonth.weekday!)
+        
         let lastDayMonth: Int = dateFirstDayOfMonth.numberOfDaysInMonthCount()
         let numOfCellsInCollection: Int = dateFirstDayOfMonth.numberOfWeekInMonthCount() * 7
         
@@ -94,6 +98,37 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         return cell!
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var reusableview: UICollectionReusableView?
+        if kind == UICollectionElementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? MonthHeaderView
+            
+            var compDateManager: DateComponents = Date.componentsOf(date: DateManager.shared().currentDate!)
+            
+            compDateManager.month! += indexPath.section - 1
+            
+            let dateFirstDayOfMonth = Date.dateWithYear(year: compDateManager.year!, month: compDateManager.month!, day: 1)
+            
+            arrayWithFirstDay[indexPath.section] = dateFirstDayOfMonth
+            
+            var componentsFirstDayOfMonth: DateComponents = Date.componentsOf(date: dateFirstDayOfMonth)
+            
+            print("Weekday:\(Int(componentsFirstDayOfMonth.weekday!))")
+            
+            weekdayOfFirstDay = Int(componentsFirstDayOfMonth.weekday!)
+            
+            let formatter = DateFormatter()
+            let month: String? = formatter.shortMonthSymbols[compDateManager.month!].uppercased()
+            headerView?.headerLabel?.text = String(month!)
+            let layout = MonthCollectionViewFlowLayout()
+            let labelOffset: CGFloat = CGFloat(weekdayOfFirstDay) * (layout.itemSize.width) + 6.0
+            headerView?.leadingConstraint?.constant = labelOffset
+            
+            reusableview = headerView
+        }
+        return reusableview!
+    }
+    
     
     // MARK: - UICollectionView Delegate FlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -101,7 +136,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let headerViewSize = CGSize(width: frame.size.width, height: 34)
+        let headerViewSize = CGSize(width: frame.size.width, height: 20)
         return headerViewSize
     }
     
