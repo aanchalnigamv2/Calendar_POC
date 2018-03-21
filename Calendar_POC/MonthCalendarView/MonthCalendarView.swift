@@ -11,6 +11,7 @@ import UIKit
 class MonthCalendarView: UIView {
 
     var collectionViewMonth: MonthCollectionView?
+    var date: Date?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,8 +22,9 @@ class MonthCalendarView: UIView {
         let view = MonthHeaderView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: 32))
         addSubview(view)
         
-        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height), collectionViewLayout: UICollectionViewLayout())
+        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height), collectionViewLayout: MonthCollectionViewFlowLayout())
 //        collectionViewMonth.protocol = self
+        collectionViewMonth?.date = DateManager.shared().currentDate
         addSubview(collectionViewMonth!)
         autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionViewMonth?.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleBottomMargin]

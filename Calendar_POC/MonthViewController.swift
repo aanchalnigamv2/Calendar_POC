@@ -42,6 +42,7 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
         let frame = CGRect(x: 0.0, y: 20.0, width: view.frame.size.width, height: view.frame.size.height)
         viewCalendarMonth = MonthCalendarView(frame: frame)
 //        viewCalendarMonth?.yearCalendarViewProtocol = self
+        viewCalendarMonth?.date = DateManager.shared().currentDate
         view.addSubview(viewCalendarMonth!)
     }
     

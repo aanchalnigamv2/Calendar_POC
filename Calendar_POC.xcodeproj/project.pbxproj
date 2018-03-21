@@ -28,7 +28,6 @@
 		87C85A60204EB72E006E6A92 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C85A5F204EB72E006E6A92 /* DateManager.swift */; };
 		87C85A64204FCB69006E6A92 /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 87C85A63204FCB69006E6A92 /* redCircle.png */; };
 		87D6CE6E20610F560011519F /* MonthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D6CE6C20610F560011519F /* MonthHeaderView.swift */; };
-		87D6CE6F20610F560011519F /* MonthHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D6CE6D20610F560011519F /* MonthHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		87C85A5F204EB72E006E6A92 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		87C85A63204FCB69006E6A92 /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
 		87D6CE6C20610F560011519F /* MonthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderView.swift; sourceTree = "<group>"; };
-		87D6CE6D20610F560011519F /* MonthHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +75,6 @@
 				87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */,
 				87B55B81205BE347004A9B35 /* MonthCalendarView.swift */,
 				87D6CE6C20610F560011519F /* MonthHeaderView.swift */,
-				87D6CE6D20610F560011519F /* MonthHeaderView.xib */,
 			);
 			path = MonthCalendarView;
 			sourceTree = "<group>";
@@ -200,7 +197,6 @@
 			files = (
 				87C85A46204E702B006E6A92 /* LaunchScreen.storyboard in Resources */,
 				87C85A64204FCB69006E6A92 /* redCircle.png in Resources */,
-				87D6CE6F20610F560011519F /* MonthHeaderView.xib in Resources */,
 				87C85A43204E702B006E6A92 /* Assets.xcassets in Resources */,
 				87C85A41204E702B006E6A92 /* Main.storyboard in Resources */,
 			);
