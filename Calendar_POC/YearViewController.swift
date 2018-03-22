@@ -36,8 +36,8 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
     
     func updateLabelWithMonthAndYear() {
         let comp: DateComponents? = Date.componentsOf(date: DateManager.shared().currentDate!)
-        dateString = String(describing: (comp?.year)!)
-        labelWithMonthAndYear.title = dateString
+        let string = String(describing: (comp?.year)!)
+        labelWithMonthAndYear.title = string
         labelWithMonthAndYear.tintColor = UIColor.red
     }
 
@@ -60,10 +60,6 @@ class YearViewController: UIViewController, YearCalendarViewProtocol {
         if segue.identifier == "YearToMonth" {
             let monthViewController = segue.destination as! MonthViewController
             monthViewController.date = DateManager.shared().currentDate
-            let backItem = UIBarButtonItem()
-            backItem.title = dateString
-            navigationItem.backBarButtonItem = backItem
-            navigationItem.backBarButtonItem?.tintColor = UIColor.red
         }
     }
 

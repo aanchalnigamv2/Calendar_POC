@@ -12,9 +12,12 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
 
     var viewCalendarMonth: MonthCalendarView?
     var date: Date?
+    var backButtonLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Today", style: .plain, target: self, action: #selector(MonthViewController.todayTapped))
 
         NotificationCenter.default.addObserver(self, selector: #selector(MonthViewController.dateChanged(_:)), name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: nil)
         edgesForExtendedLayout = []
@@ -33,9 +36,10 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
     }
     
     func updateLabelWithMonthAndYear() {
-        let comp: DateComponents? = Date.componentsOf(date: date!)
+        let comp: DateComponents? = Date.componentsOf(date: DateManager.shared().currentDate!)
         let string: String = String(describing: "\(arrayMonthName[(comp?.month)! - 1]) \((comp?.year)!)")
         print(string)
+        self.title = string
     }
     
     func addCalendars() {
@@ -44,6 +48,10 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
 //        viewCalendarMonth?.yearCalendarViewProtocol = self
         viewCalendarMonth?.date = DateManager.shared().currentDate
         view.addSubview(viewCalendarMonth!)
+    }
+    
+    @objc func todayTapped() {
+        DateManager.shared().setCurrentDate(_currentDate: Date.dateWithYear(year: Date.componentsOfCurrentDate().year!, month: Date.componentsOfCurrentDate().month!, day: Date.componentsOfCurrentDate().day!))
     }
     
     func showMonthCalendar() {

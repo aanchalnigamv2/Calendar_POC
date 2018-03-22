@@ -17,6 +17,8 @@ class MonthCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.contentView.frame = self.bounds
+        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,7 +54,6 @@ class MonthCell: UICollectionViewCell {
     
     func markAsWeekend() {
         labelDay?.textColor = UIColor.gray
-//        backgroundColor = UIColor.lightGray
     }
     
     func setDay(aDay: Date?) {
@@ -60,7 +61,7 @@ class MonthCell: UICollectionViewCell {
         if day != nil {
             var components: DateComponents? = Date.componentsOf(date: day!)
             labelDay?.text = String(describing: (components?.day)!)
-            labelDay?.font = UIFont.systemFont(ofSize: 13)
+            labelDay?.font = UIFont.systemFont(ofSize: 15)
             if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
                 markAsCurrentDay()
             }

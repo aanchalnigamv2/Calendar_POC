@@ -67,7 +67,6 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
         }
         
         sizeOfCells = CGSize(width: frame.size.width / 7, height: (frame.size.height - 50) / 7)
-        //(((frame.size.height - 50.0) / 6)))
         return arrayDates.count
     }
     
@@ -96,7 +95,6 @@ class MonthCollectionViewForYearCell: UICollectionView, UICollectionViewDelegate
             DateManager.shared().currentDate = obj
             cellProtocol?.showMonthCalendar()
         }
-        //&& cellProtocol!.responds(to: Selector(("showMonthCalendar")))
     }
 
     // MARK: - UICollectionView Delegate FlowLayout

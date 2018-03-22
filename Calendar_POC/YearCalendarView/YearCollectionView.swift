@@ -104,8 +104,6 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         if yearCollectionViewProtocol != nil  {
             yearCollectionViewProtocol?.showMonthCalendar()
         }
-        
-        //&& (yearCollectionViewProtocol?.responds(to: Selector(("showMonthCalendar"))))!
     }
     
     // MARK: - Other Methods

@@ -19,17 +19,13 @@ class MonthCalendarView: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(YearCalendarView.dateChanged(_:)), name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: nil)
         
         backgroundColor = UIColor.white
-        let view = MonthHeaderView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: 32))
-        addSubview(view)
         
-        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height), collectionViewLayout: MonthCollectionViewFlowLayout())
+        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 32.0, width: frame.size.width, height: frame.size.height - 32), collectionViewLayout: UICollectionViewLayout())
 //        collectionViewMonth.protocol = self
         collectionViewMonth?.date = DateManager.shared().currentDate
         addSubview(collectionViewMonth!)
         autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionViewMonth?.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleTopMargin, .flexibleBottomMargin]
-        view.autoresizingMask = .flexibleWidth
-
     }
     
     required init?(coder aDecoder: NSCoder) {

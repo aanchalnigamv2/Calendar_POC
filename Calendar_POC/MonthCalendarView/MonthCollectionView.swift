@@ -15,9 +15,10 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     var arrayDates: [Date?] = []
     var dateFirstDayOfMonth: Date?
     var lastContentOffset: CGFloat = 0.0
+    var componentsFirstDayOfMonth: DateComponents?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
+        super.init(frame: frame, collectionViewLayout: MonthCollectionViewFlowLayout())
         
         // Initialization code
         dataSource = self
@@ -26,6 +27,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         register(MonthCell.self, forCellWithReuseIdentifier: "monthCell")
         register(MonthHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
         isScrollEnabled = true
+        isPagingEnabled = true
         showsVerticalScrollIndicator = false
     }
     
@@ -46,11 +48,13 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
             arrayDates.removeAll()
             
         }
-        var compDateManeger: DateComponents? = Date.componentsOf(date: date!)
+        var compDateManeger: DateComponents? = Date.componentsOf(date: DateManager.shared().currentDate!)
+        
+//        compDateManeger?.month! += (section - 1)
         
         dateFirstDayOfMonth = Date.dateWithYear(year: (compDateManeger?.year)!, month: (compDateManeger?.month)!, day: 1)
         
-        var componentsFirstDayOfMonth: DateComponents? = Date.componentsOf(date: dateFirstDayOfMonth!)
+        componentsFirstDayOfMonth = Date.componentsOf(date: dateFirstDayOfMonth!)
         
         let lastDayMonth: Int = dateFirstDayOfMonth!.numberOfDaysInMonthCount()
         
@@ -67,15 +71,11 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
             i += 1
         }
         
-        sizeOfCells = CGSize(width: bounds.size.width / 7, height: 40)
-        return arrayDates.count
+        let numOfWeeks = dateFirstDayOfMonth?.numberOfWeekInMonthCount()
         
-//        let sizeOfCells = CGSize(width: bounds.size.width / 7, height: 40)
-//        //CGSize(width: (frame.size.width - 7 * 2) / 7, height: (frame.size.height - CGFloat(dateFirstDayOfMonth.numberOfWeekInMonthCount() - 1) * 2 - 2) / CGFloat(dateFirstDayOfMonth.numberOfWeekInMonthCount()))
-//
-//        arraySizeOfCells[section] = NSValue(cgSize: sizeOfCells) as! CGSize
-//
-//        return arrayDates.count
+        sizeOfCells = CGSize(width: (frame.size.width - 7 * 2) / 7, height: (frame.size.height - CGFloat(numOfWeeks! - 1) * 2 - 2) / CGFloat(numOfWeeks!))
+        
+        return arrayDates.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -96,6 +96,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         if kind == UICollectionElementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? MonthHeaderView
             headerView?.date = date
+            headerView?.weekdayOfFirstDay = componentsFirstDayOfMonth?.weekday
             headerView?.addWeekLabels(withSizeOfCells: sizeOfCells)
             reusableview = headerView
         }
@@ -109,7 +110,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let headerViewSize = CGSize(width: frame.size.width, height: 20)
+        let headerViewSize = CGSize(width: 0, height: 0)
         return headerViewSize
     }
     

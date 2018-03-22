@@ -12,6 +12,7 @@ class MonthHeaderView: UICollectionReusableView {
 
     var labelTitle: UILabel?
     var date: Date?
+    var weekdayOfFirstDay: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,13 +23,15 @@ class MonthHeaderView: UICollectionReusableView {
     
     func addWeekLabels(withSizeOfCells sizeOfCells: CGSize) {
         if !(labelTitle != nil) {
+            let layout = MonthCollectionViewFlowLayout()
             let height: CGFloat = frame.size.height / 4.0
-            labelTitle = UILabel(frame: CGRect(x: frame.size.width / 2, y: 0.0, width: frame.size.width, height: 3 * height))
+            labelTitle = UILabel(frame: CGRect(x: CGFloat(weekdayOfFirstDay!) * (layout.itemSize.width), y: 0.0, width: frame.size.width, height: 3 * height))
             labelTitle?.textColor = UIColor.red
-            labelTitle?.font = UIFont.systemFont(ofSize: 13)
+            labelTitle?.font = UIFont.boldSystemFont(ofSize: 15)
             addSubview(labelTitle!)
         }
-        labelTitle?.text = arrayMonthName[(date?.componentsOfDate().month)! - 1].uppercased()
+
+        labelTitle?.text = arrayMonthNameAbrev[(date?.componentsOfDate().month)! - 1].uppercased()
     }
     
 }

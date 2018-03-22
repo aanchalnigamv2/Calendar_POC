@@ -70,11 +70,11 @@
 		87B55B7A205A8628004A9B35 /* MonthCalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				87D6CE6C20610F560011519F /* MonthHeaderView.swift */,
 				87B55B7D205A9C1F004A9B35 /* MonthCell.swift */,
 				87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */,
 				87B55B7F205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift */,
 				87B55B81205BE347004A9B35 /* MonthCalendarView.swift */,
-				87D6CE6C20610F560011519F /* MonthHeaderView.swift */,
 			);
 			path = MonthCalendarView;
 			sourceTree = "<group>";
