@@ -131,7 +131,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         lastContentOffset = scrollView.contentOffset.y
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         var scrollDirection: ScrollDirection
         if lastContentOffset > scrollView.contentOffset.y {
             changeYearDirectionIsUp(false)
@@ -143,6 +143,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
             scrollDirection = .none
         }
     }
+    
     
     // MARK: - Other Methods
     func changeYearDirectionIsUp(_ isUp: Bool) {

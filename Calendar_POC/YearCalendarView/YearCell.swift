@@ -46,6 +46,5 @@ class YearCell: UICollectionViewCell, MonthCollectionViewForYearCellProtocol {
             yearCellProtocol?.showMonthCalendar()
         }
     }
-    
-    //&& (yearCellProtocol?.responds(to: Selector(("showMonthCalendar"))))!
+
 }

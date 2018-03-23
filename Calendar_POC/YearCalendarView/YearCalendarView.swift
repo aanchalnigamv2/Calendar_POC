@@ -26,7 +26,7 @@ class YearCalendarView: UIView, YearCollectionViewProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(YearCalendarView.dateChanged(_:)), name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: nil)
 
         backgroundColor = UIColor.white
-        collectionViewYear = YearCollectionView(frame: CGRect(x: 10, y: 10 , width: self.frame.size.width - 20, height: self.frame.size.height), collectionViewLayout: YearCollectionViewFlowLayout())
+        collectionViewYear = YearCollectionView(frame: CGRect(x: 10, y: 20 , width: self.frame.size.width - 20, height: self.frame.size.height), collectionViewLayout: YearCollectionViewFlowLayout())
         collectionViewYear?.yearCollectionViewProtocol = self
         addSubview(collectionViewYear!)
         autoresizingMask = [.flexibleHeight, .flexibleWidth]

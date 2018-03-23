@@ -17,8 +17,6 @@ class MonthCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentView.frame = self.bounds
-        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,14 +25,14 @@ class MonthCell: UICollectionViewCell {
     
     func initLayout() {
         if !(imageViewCircle != nil) {
-            imageViewCircle = UIImageView(frame: CGRect(x: frame.size.width - 32.0 - 3.0, y: 3.0, width: 32.0, height: 32.0))
+            imageViewCircle = UIImageView(frame: CGRect(x: frame.size.width - 40.0, y: 3.0, width: 40.0, height: 40.0))
             imageViewCircle?.autoresizingMask = [.flexibleLeftMargin, .flexibleBottomMargin]
             addSubview(imageViewCircle!)
             
-            labelDay = UILabel(frame: CGRect(x: ((imageViewCircle?.frame.size.width)! - 20.0) / 2.0, y: ((imageViewCircle?.frame.size.height)! - 20.0) / 2.0, width: 20.0, height: 20.0))
+            labelDay = UILabel(frame: CGRect(x: ((imageViewCircle?.frame.size.width)! - 25.0) / 2.0, y: ((imageViewCircle?.frame.size.height)! - 20.0) / 2.0, width: 25.0, height: 20.0))
             labelDay?.autoresizingMask = [.flexibleLeftMargin, .flexibleBottomMargin]
             labelDay?.textAlignment = .center
-            labelDay?.font = UIFont.systemFont(ofSize: 13)
+            labelDay?.font = UIFont(name: "Helvetica Neue", size: (labelDay?.font.pointSize)!)
             imageViewCircle?.addSubview(labelDay!)
         }
         backgroundColor = UIColor.white
@@ -61,7 +59,7 @@ class MonthCell: UICollectionViewCell {
         if day != nil {
             var components: DateComponents? = Date.componentsOf(date: day!)
             labelDay?.text = String(describing: (components?.day)!)
-            labelDay?.font = UIFont.systemFont(ofSize: 15)
+            labelDay?.font = UIFont(name: "Helvetica Neue", size: (labelDay?.font.pointSize)!)
             if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
                 markAsCurrentDay()
             }

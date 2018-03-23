@@ -20,7 +20,7 @@ class MonthCalendarView: UIView {
         
         backgroundColor = UIColor.white
         
-        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 32.0, width: frame.size.width, height: frame.size.height - 32), collectionViewLayout: UICollectionViewLayout())
+        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 10.0, width: frame.size.width - 10, height: frame.size.height), collectionViewLayout: UICollectionViewLayout())
 //        collectionViewMonth.protocol = self
         collectionViewMonth?.date = DateManager.shared().currentDate
         addSubview(collectionViewMonth!)

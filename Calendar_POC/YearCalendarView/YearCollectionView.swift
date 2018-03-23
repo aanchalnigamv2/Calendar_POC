@@ -57,7 +57,7 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "monthCell", for: indexPath) as? YearCell
         cell?.yearCellProtocol = self
         cell?.initLayout()
-        cell?.setDate(aDate: Date.dateWithYear(year: (DateManager.shared().currentDate?.componentsOfDate().year)! + (indexPath.section-1), month: (indexPath.row + 1), day: 1))
+        cell?.setDate(aDate: Date.dateWithYear(year: (DateManager.shared().currentDate?.componentsOfDate().year)! + (indexPath.section - 1), month: (indexPath.row + 1), day: 1))
         return cell!
     }
     
@@ -66,7 +66,7 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         let isLandscape: Bool = UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
         let lines: Int = isLandscape ? 3 : 4
         let columns: Int = isLandscape ? 4 : 3
-        sizeOfCell = CGSize(width: CGFloat(((frame.size.width - CGFloat((columns - 1) * 20)) / CGFloat(columns))), height: CGFloat(((frame.size.height - CGFloat((lines - 1) * 13)) / CGFloat(lines))))
+        sizeOfCell = CGSize(width: CGFloat(((frame.size.width - CGFloat((columns - 1) * 20)) / CGFloat(columns))), height: CGFloat(((frame.size.height - CGFloat((lines - 1) * 15)) / CGFloat(lines))))
         return sizeOfCell!
     }
     
@@ -87,7 +87,7 @@ class YearCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         lastContentOffset = scrollView.contentOffset.y
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         let scrollDirection: ScrollDirection?
         if lastContentOffset > scrollView.contentOffset.y {
             changeYear(false)

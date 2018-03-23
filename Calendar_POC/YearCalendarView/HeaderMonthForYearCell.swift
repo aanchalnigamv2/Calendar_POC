@@ -29,7 +29,8 @@ class HeaderMonthForYearCell: UICollectionReusableView {
             let height: CGFloat = frame.size.height / 4.0
             labelTitle = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: 3 * height))
             labelTitle?.textColor = UIColor.red
-            labelTitle?.font = UIFont.systemFont(ofSize: 13)
+            labelTitle?.font = UIFont(name: "Helvetica Neue", size: 13)
+            //UIFont.systemFont(ofSize: 13)
 
             addSubview(labelTitle!)
             for i in 0..<arrayWeekInitial.count {
@@ -37,7 +38,8 @@ class HeaderMonthForYearCell: UICollectionReusableView {
                 label.textAlignment = .center
                 label.text = arrayWeekInitial[i]
                 label.textColor = UIColor.black
-                label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize - 10)
+                label.font = UIFont(name: "Helvetica Neue", size: label.font.pointSize - 10)
+                //UIFont.boldSystemFont(ofSize: label.font.pointSize - 10)
                 label.adjustsFontSizeToFitWidth = true
                 label.textAlignment = .center
                 addSubview(label)

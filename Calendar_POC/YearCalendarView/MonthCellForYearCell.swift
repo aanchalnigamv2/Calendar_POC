@@ -41,7 +41,8 @@ class MonthCellForYearCell: UICollectionViewCell {
         if day != nil {
             var components: DateComponents? = Date.componentsOf(date: day!)
             labelDay?.text = String(describing: (components?.day)!)
-            labelDay?.font = UIFont.systemFont(ofSize: 10)
+            labelDay?.font = UIFont(name: "Helvetica Neue", size: 10)
+            //UIFont.systemFont(ofSize: 10)
             if Date.isTheSameDateTheCompA(components!, compB: Date.componentsOfCurrentDate()) {
                 markAsCurrentDay()
             }
