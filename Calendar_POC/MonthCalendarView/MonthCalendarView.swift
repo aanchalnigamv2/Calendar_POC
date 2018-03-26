@@ -20,7 +20,11 @@ class MonthCalendarView: UIView {
         
         backgroundColor = UIColor.white
         
-        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 10.0, width: frame.size.width - 10, height: frame.size.height), collectionViewLayout: UICollectionViewLayout())
+        let weekDaysHeaderView = WeekDaysHeaderView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 20))
+        weekDaysHeaderView.backgroundColor = UIColor.lightGray
+        addSubview(weekDaysHeaderView)
+        
+        collectionViewMonth = MonthCollectionView(frame: CGRect(x: 0.0, y: 30.0, width: frame.size.width - 10, height: frame.size.height), collectionViewLayout: UICollectionViewLayout())
 //        collectionViewMonth.protocol = self
         collectionViewMonth?.date = DateManager.shared().currentDate
         addSubview(collectionViewMonth!)
@@ -39,7 +43,7 @@ class MonthCalendarView: UIView {
     }
     
     // MARK: - DateManager Notification
-    @objc func dateChanged(_ not: Notification) {
+    @objc func dateChanged(_ notification: Notification) {
         collectionViewMonth?.setContentOffset(CGPoint(x: 0.0, y: (collectionViewMonth?.frame.size.height)!), animated: false)
         collectionViewMonth?.reloadData()
     }

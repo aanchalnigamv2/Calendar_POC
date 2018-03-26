@@ -42,7 +42,7 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
     }
     
     func addCalendars() {
-        let frame = CGRect(x: 0.0, y: 30.0, width: view.frame.size.width, height: view.frame.size.height)
+        let frame = CGRect(x: 0.0, y: 0.0, width: view.frame.size.width, height: view.frame.size.height)
         viewCalendarMonth = MonthCalendarView(frame: frame)
 //        viewCalendarMonth?.yearCalendarViewProtocol = self
         viewCalendarMonth?.date = DateManager.shared().currentDate
@@ -54,7 +54,16 @@ class MonthViewController: UIViewController, YearCalendarViewProtocol {
     }
     
     func showMonthCalendar() {
-        updateLabelWithMonthAndYear()
+        performSegue(withIdentifier: "MonthToWeek", sender: self)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MonthToWeek" {
+            let weekViewController = segue.destination as! WeekViewController
+//            monthViewController.date = DateManager.shared().currentDate
+        }
     }
 
 }

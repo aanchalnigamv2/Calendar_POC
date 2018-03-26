@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Year View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -50,76 +45,31 @@
                     <view key="view" contentMode="scaleToFill" id="RSz-dx-0RH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tSl-Ue-wei">
-                                <rect key="frame" x="0.0" y="64" width="375" height="20"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flt-Wa-TzU">
-                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMb-fc-IMP">
-                                        <rect key="frame" x="53.5" y="0.0" width="53.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs1-Gp-PHe">
-                                        <rect key="frame" x="107" y="0.0" width="53.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOb-oe-gC4">
-                                        <rect key="frame" x="160.5" y="0.0" width="53.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4Z-0k-SSD">
-                                        <rect key="frame" x="214" y="0.0" width="54" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2p-yv-hK2">
-                                        <rect key="frame" x="268" y="0.0" width="53.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5be-X2-DZF">
-                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="BeS-DX-D3O"/>
-                                    <constraint firstItem="5be-X2-DZF" firstAttribute="width" secondItem="flt-Wa-TzU" secondAttribute="width" id="C0x-Om-5iF"/>
-                                    <constraint firstItem="lMb-fc-IMP" firstAttribute="width" secondItem="flt-Wa-TzU" secondAttribute="width" id="EGI-Wb-TSd"/>
-                                    <constraint firstItem="Fs1-Gp-PHe" firstAttribute="width" secondItem="flt-Wa-TzU" secondAttribute="width" id="RJj-HV-9ut"/>
-                                    <constraint firstItem="G4Z-0k-SSD" firstAttribute="width" secondItem="flt-Wa-TzU" secondAttribute="width" id="S8Q-H9-dG3"/>
-                                    <constraint firstItem="J2p-yv-hK2" firstAttribute="width" secondItem="flt-Wa-TzU" secondAttribute="width" id="TsD-hx-emv"/>
-                                    <constraint firstItem="yOb-oe-gC4" firstAttribute="width" secondItem="flt-Wa-TzU" secondAttribute="width" id="sOe-8e-Ome"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="RLw-07-gnq" firstAttribute="trailing" secondItem="tSl-Ue-wei" secondAttribute="trailing" id="5dE-8R-vli"/>
-                            <constraint firstItem="tSl-Ue-wei" firstAttribute="top" secondItem="RLw-07-gnq" secondAttribute="top" id="NcN-SU-RyC"/>
-                            <constraint firstItem="tSl-Ue-wei" firstAttribute="leading" secondItem="RLw-07-gnq" secondAttribute="leading" id="vTf-re-SZv"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RLw-07-gnq"/>
                     </view>
+                    <connections>
+                        <segue destination="8ic-RB-cz0" kind="show" identifier="MonthToWeek" id="eaY-w1-tcG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYf-dW-dY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741.60000000000002" y="17.541229385307346"/>
+            <point key="canvasLocation" x="762" y="18"/>
+        </scene>
+        <!--Week View Controller-->
+        <scene sceneID="n2a-XU-lQb">
+            <objects>
+                <viewController id="8ic-RB-cz0" customClass="WeekViewController" customModule="Calendar_POC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="okH-Zd-DbY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xe8-wo-qn4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XEK-mE-0b8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x1Z-SF-2NO">

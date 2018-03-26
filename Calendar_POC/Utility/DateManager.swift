@@ -33,4 +33,8 @@ class DateManager: NSObject {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DateManager.DateChanged"), object: currentDate)
     }
     
+    func setThemes() {
+        
+    }
+    
 }

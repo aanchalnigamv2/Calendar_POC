@@ -25,7 +25,7 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         delegate = self
         backgroundColor = UIColor.white
         register(MonthCell.self, forCellWithReuseIdentifier: "monthCell")
-        register(MonthHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView")
+        register(MonthHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCollection")
         isScrollEnabled = true
         isPagingEnabled = true
         showsVerticalScrollIndicator = false
@@ -94,13 +94,23 @@ class MonthCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var reusableview: UICollectionReusableView?
         if kind == UICollectionElementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath) as? MonthHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCollection", for: indexPath) as? MonthHeaderView
             headerView?.date = date
             headerView?.weekdayOfFirstDay = componentsFirstDayOfMonth?.weekday
             headerView?.addWeekLabels(withSizeOfCells: sizeOfCells)
             reusableview = headerView
         }
         return reusableview!
+    }
+    
+    // MARK: - UICollectionView Delegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let obj = arrayDates[indexPath.row]
+//        if obj != nil && cellProtocol != nil  {
+//            DateManager.shared().currentDate = obj
+//            cellProtocol?.showMonthCalendar()
+//        }
+        print(obj)
     }
     
     

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87B054722068DCD100D55068 /* WeekDaysHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B054712068DCD100D55068 /* WeekDaysHeaderView.swift */; };
+		87B054752069079B00D55068 /* WeekCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B054742069079B00D55068 /* WeekCollectionViewFlowLayout.swift */; };
+		87B05477206907BD00D55068 /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B05476206907BD00D55068 /* WeekCell.swift */; };
+		87B05479206907D700D55068 /* WeekCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B05478206907D700D55068 /* WeekCollectionView.swift */; };
+		87B0547B2069098100D55068 /* WeekCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0547A2069098100D55068 /* WeekCalendarView.swift */; };
+		87B0547E20690A2A00D55068 /* WeekHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0547D20690A2A00D55068 /* WeekHeaderCollectionView.swift */; };
+		87B0548020690A4400D55068 /* WeekHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0547F20690A4400D55068 /* WeekHeaderCell.swift */; };
+		87B054822069195500D55068 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B054812069195500D55068 /* WeekViewController.swift */; };
 		87B55B79205A8578004A9B35 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B78205A8578004A9B35 /* MonthViewController.swift */; };
 		87B55B7C205A8A1B004A9B35 /* MonthCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */; };
 		87B55B7E205A9C1F004A9B35 /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B55B7D205A9C1F004A9B35 /* MonthCell.swift */; };
@@ -31,6 +39,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87B054712068DCD100D55068 /* WeekDaysHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysHeaderView.swift; sourceTree = "<group>"; };
+		87B054742069079B00D55068 /* WeekCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		87B05476206907BD00D55068 /* WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCell.swift; sourceTree = "<group>"; };
+		87B05478206907D700D55068 /* WeekCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionView.swift; sourceTree = "<group>"; };
+		87B0547A2069098100D55068 /* WeekCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCalendarView.swift; sourceTree = "<group>"; };
+		87B0547D20690A2A00D55068 /* WeekHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderCollectionView.swift; sourceTree = "<group>"; };
+		87B0547F20690A4400D55068 /* WeekHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHeaderCell.swift; sourceTree = "<group>"; };
+		87B054812069195500D55068 /* WeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
 		87B55B78205A8578004A9B35 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 		87B55B7B205A8A1B004A9B35 /* MonthCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCollectionView.swift; sourceTree = "<group>"; };
 		87B55B7D205A9C1F004A9B35 /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
@@ -67,6 +83,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87B054732069072F00D55068 /* WeekCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				87B0547C206909F800D55068 /* WeekHeaderCollectionView */,
+				87B054742069079B00D55068 /* WeekCollectionViewFlowLayout.swift */,
+				87B05476206907BD00D55068 /* WeekCell.swift */,
+				87B05478206907D700D55068 /* WeekCollectionView.swift */,
+				87B0547A2069098100D55068 /* WeekCalendarView.swift */,
+			);
+			path = WeekCalendarView;
+			sourceTree = "<group>";
+		};
+		87B0547C206909F800D55068 /* WeekHeaderCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				87B0547D20690A2A00D55068 /* WeekHeaderCollectionView.swift */,
+				87B0547F20690A4400D55068 /* WeekHeaderCell.swift */,
+			);
+			path = WeekHeaderCollectionView;
+			sourceTree = "<group>";
+		};
 		87B55B7A205A8628004A9B35 /* MonthCalendarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +138,11 @@
 				87C85A5C204E74F7006E6A92 /* Utility */,
 				87C85A4D204E7474006E6A92 /* YearCalendarView */,
 				87B55B7A205A8628004A9B35 /* MonthCalendarView */,
+				87B054732069072F00D55068 /* WeekCalendarView */,
 				87C85A3B204E702B006E6A92 /* AppDelegate.swift */,
 				87C85A3D204E702B006E6A92 /* YearViewController.swift */,
 				87B55B78205A8578004A9B35 /* MonthViewController.swift */,
+				87B054812069195500D55068 /* WeekViewController.swift */,
 				87C85A3F204E702B006E6A92 /* Main.storyboard */,
 				87C85A42204E702B006E6A92 /* Assets.xcassets */,
 				87C85A44204E702B006E6A92 /* LaunchScreen.storyboard */,
@@ -131,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				87C85A5D204E74F7006E6A92 /* Date+DaysCount.swift */,
+				87B054712068DCD100D55068 /* WeekDaysHeaderView.swift */,
 				87C85A5F204EB72E006E6A92 /* DateManager.swift */,
 			);
 			path = Utility;
@@ -213,17 +253,25 @@
 				87C85A3E204E702B006E6A92 /* YearViewController.swift in Sources */,
 				87C85A5E204E74F8006E6A92 /* Date+DaysCount.swift in Sources */,
 				87C85A57204E7474006E6A92 /* MonthCollectionViewForYearCell.swift in Sources */,
+				87B0548020690A4400D55068 /* WeekHeaderCell.swift in Sources */,
+				87B054822069195500D55068 /* WeekViewController.swift in Sources */,
 				87C85A5A204E7474006E6A92 /* YearCollectionView.swift in Sources */,
 				87B55B79205A8578004A9B35 /* MonthViewController.swift in Sources */,
+				87B0547B2069098100D55068 /* WeekCalendarView.swift in Sources */,
 				87B55B7E205A9C1F004A9B35 /* MonthCell.swift in Sources */,
 				87C85A5B204E7474006E6A92 /* YearCollectionViewFlowLayout.swift in Sources */,
 				87C85A3C204E702B006E6A92 /* AppDelegate.swift in Sources */,
+				87B05479206907D700D55068 /* WeekCollectionView.swift in Sources */,
 				87D6CE6E20610F560011519F /* MonthHeaderView.swift in Sources */,
+				87B054722068DCD100D55068 /* WeekDaysHeaderView.swift in Sources */,
 				87C85A60204EB72E006E6A92 /* DateManager.swift in Sources */,
+				87B0547E20690A2A00D55068 /* WeekHeaderCollectionView.swift in Sources */,
 				87B55B7C205A8A1B004A9B35 /* MonthCollectionView.swift in Sources */,
 				87C85A59204E7474006E6A92 /* YearCell.swift in Sources */,
 				87C85A56204E7474006E6A92 /* MonthCellForYearCell.swift in Sources */,
+				87B054752069079B00D55068 /* WeekCollectionViewFlowLayout.swift in Sources */,
 				87B55B82205BE347004A9B35 /* MonthCalendarView.swift in Sources */,
+				87B05477206907BD00D55068 /* WeekCell.swift in Sources */,
 				87C85A58204E7474006E6A92 /* YearCalendarView.swift in Sources */,
 				87B55B80205A9C5E004A9B35 /* MonthCollectionViewFlowLayout.swift in Sources */,
 			);
